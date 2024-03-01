@@ -5,15 +5,22 @@
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.1/css/all.min.css" integrity="sha512-DTOQO9RWCH3ppGqcWaEA1BIZOC6xxalwEsw9c2QQeAIftl+Vegovlnee1c9QX4TctnWMn13TZye+giMm8e2LwA==" crossorigin="anonymous" referrerpolicy="no-referrer" />
 @endsection
 
-@section('body_classes', 'hold-transition sidebar-mini layout-fixed')
+@section('classes_body', 'hold-transition sidebar-mini layout-fixed')
 @section('body')
+
+
 
     @include('layouts.header')
 
     @include('layouts.sidebar')
 
-    <div class="wrapper">
-        @yield('content')
+    <div class="content-wrapper p-4">
+        <div class="content-header">
+            <h1>@yield('page-title')</h1>
+        </div>
+        <div class="content">
+            @yield('content')
+        </div>
     </div>
 
 @endsection
