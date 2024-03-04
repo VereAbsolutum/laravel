@@ -1,6 +1,5 @@
 <?php
 
-use App\Http\Controllers\Admin\PermissionsController;
 use Illuminate\Support\Facades\Auth;
 use Illuminate\Support\Facades\Route;
 
@@ -23,7 +22,9 @@ Auth::routes();
 
 Route::get('/home', [App\Http\Controllers\HomeController::class, 'index'])->name('home');
 
-Route::prefix('admin')->group(function () {
+Route::prefix('admin')->name('admin.')->group(function () {
 
-    Route::resource('permissions', PermissionsController::class);
+    Route::resource('permissions', App\Http\Controllers\Admin\PermissionsController::class);
+
+    Route::resource('roles', App\Http\Controllers\Admin\RoleController::class);
 });
