@@ -12,7 +12,7 @@
 
     @include('layouts.sidebar')
 
-    <div class="wrapper">
+    <div class="content-wrapper">
         @yield('content')
     </div>
 
